@@ -7,7 +7,13 @@ const mainNavItems = ["Home", "Notes", "About"];
 export default function MainNav() {
   return (
     <>
-      <div className="flex justify-around w-full">
+      <div className="flex justify-between w-full">
+        <div className="flex items-center">
+          <span className="relative flex shrink-0 overflow-hidden h-10 w-10">
+            <img src="/logo2.png" className="aspect-square h-full w-full" />
+          </span>
+          <p className="font-medium">Notes AI</p>
+        </div>
         <div className="mr-4 hidden gap-2 md:flex">
           {mainNavItems.map((item, index) => (
             <Link to={`/${item.toLowerCase()}`}>
