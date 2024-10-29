@@ -18,18 +18,6 @@ export const usernameValidationRules = [
     .withMessage("Username can only contain letters, numbers, and underscores"),
 ];
 
-export const userAsEmailValidationRules = [
-  body("username")
-    .isLength({ min: 1 })
-    .withMessage("Username/Email is required")
-    .isLength({ min: 3, max: 100 })
-    .withMessage("Username/Email must be between 3 and 100 characters long")
-    .matches(/^[A-Za-z0-9_@.]+$/)
-    .withMessage(
-      "Username/Email can only contain letters, numbers, underscores, at symbol and dots"
-    ),
-];
-
 export const passwordValidationRules = [
   body("password")
     .isLength({ min: 3 })
@@ -40,6 +28,10 @@ export const passwordValidationRules = [
     .withMessage("Password must contain at least one lowercase letter")
     .matches(/\d/)
     .withMessage("Password must contain at least one number"),
+];
+
+export const currentPasswordValidationRules = [
+  body("currentpassword").isEmpty().withMessage("Password should not be empty"),
 ];
 
 export const emailValidationRules = [
@@ -62,3 +54,23 @@ export const validateAllRules = [
   ...emailValidationRules,
   ...displayNameValidationRules,
 ];
+
+export async function postValidation(req, res, next) {
+  if (Object.keys(req.body).length === 0)
+    return res.status(400).json({ error: "Request body is empty" });
+
+  if (req.body.username)
+    await Promise.all(usernameValidationRules.map((rule) => rule.run(req)));
+
+  if (req.body.email)
+    await Promise.all(emailValidationRules.map((rule) => rule.run(req)));
+
+  if (req.body.displayname)
+    await Promise.all(displayNameValidationRules.map((rule) => rule.run(req)));
+
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return res.status(400).json({ errors: errors.array() });
+  }
+  next();
+}

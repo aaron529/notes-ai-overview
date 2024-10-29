@@ -17,9 +17,14 @@ const userSchema = new Schema({
     type: String,
     required: true,
   },
-  date: {
+  created_at: {
     type: Date,
     required: false,
+    default: Date.now,
+  },
+  updated_at: {
+    type: Date,
+    required: true,
     default: Date.now,
   },
 });
