@@ -18,9 +18,14 @@ const noteModel = new Schema({
     type: Boolean,
     required: false,
   },
-  date: {
+  created_at: {
     type: Date,
     required: false,
+    default: Date.now,
+  },
+  updated_at: {
+    type: Date,
+    required: true,
     default: Date.now,
   },
 });
