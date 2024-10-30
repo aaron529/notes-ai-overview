@@ -14,8 +14,8 @@ export const getUserById = async (id) => {
 };
 
 export const createUser = async (UserData) => {
-  const User = new User({ ...UserData });
-  return await User.save();
+  const user = new User({ ...UserData });
+  return await user.save();
 };
 
 export const getUserPass = async (id) => {

@@ -1,0 +1,43 @@
+### Users
+GET http://localhost:3000/api/users
+
+
+### New User
+POST http://localhost:3000/api/users/new
+content-type: application/json
+
+{
+    "username": "spooky",
+    "password": "Password@123",
+    "email": "spooky@gmail.com",
+    "displayname": "pop"
+}
+
+
+### User :id
+GET http://localhost:3000/api/user/67220311ee4da8da85ca7e88
+
+
+### Update Password
+PATCH http://localhost:3000/api/user/67220311ee4da8da85ca7e88/updatePassword
+content-type: application/json
+
+{
+    "password": "Sussy@123"
+    "currentpassword": "Hello@123"
+}
+
+
+### Update User data
+PATCH http://localhost:3000/api/user/67220311ee4da8da85ca7e88/update
+content-type: application/json
+
+{
+    "displayname": "tat",
+    "email": "69@gmail.com",
+    "username": "tat69"
+}
+
+
+### Delete User
+DELETE http://localhost:3000/api/user/6721d6501c2dcc737fdfa4c2/delete

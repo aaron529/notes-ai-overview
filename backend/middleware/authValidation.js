@@ -31,7 +31,7 @@ export const passwordValidationRules = [
 ];
 
 export const currentPasswordValidationRules = [
-  body("currentpassword").isEmpty().withMessage("Password should not be empty"),
+  body("currentpassword").notEmpty().withMessage("Current password should not be empty"),
 ];
 
 export const emailValidationRules = [

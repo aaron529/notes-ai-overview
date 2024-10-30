@@ -1,12 +1,15 @@
 import { Router } from "express";
 import {
-  createNewUser,
+  registerUser,
   getAllUsers,
   updateUser,
   deleteUser,
+  updateUserPass,
   getUser,
 } from "../controllers/authController.js";
 import userValidation, {
+  currentPasswordValidationRules,
+  passwordValidationRules,
   postValidation,
   validateAllRules,
 } from "../middleware/authValidation.js";
@@ -14,12 +17,14 @@ import userValidation, {
 const router = Router();
 
 router.get("/api/users", getAllUsers);
-router.post("/api/users/new", validateAllRules, userValidation, createNewUser);
+router.post("/api/users/new", validateAllRules, userValidation, registerUser);
 router.get("/api/user/:id", getUser);
+router.patch("/api/user/:id/update", postValidation, updateUser);
 router.patch(
-  "/api/user/:id/update",
-  postValidation,
-  updateUser
+  "/api/user/:id/updatePassword",
+  [...currentPasswordValidationRules, ...passwordValidationRules],
+  userValidation,
+  updateUserPass
 );
 router.delete("/api/user/:id/delete", deleteUser);
 
