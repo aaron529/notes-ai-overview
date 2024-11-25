@@ -2,7 +2,7 @@ import { ModeToggle } from "./mode-toggle";
 import { Button } from "./ui/button";
 import { Link } from "react-router-dom";
 
-const mainNavItems = ["Home", "Notes", "About"];
+const mainNavItems = ["Home", "Notes", "BlackBoard"];
 
 export default function MainNav() {
   return (
@@ -16,7 +16,7 @@ export default function MainNav() {
         </div>
         <div className="mr-4 hidden gap-2 md:flex">
           {mainNavItems.map((item, index) => (
-            <Link to={`/${item.toLowerCase()}`}>
+            <Link to={`/${item.toLowerCase()}`} key={index}>
               <Button key={index} variant="link">
                 {item}
               </Button>
