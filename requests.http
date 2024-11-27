@@ -41,3 +41,7 @@ content-type: application/json
 
 ### Delete User
 DELETE http://localhost:3000/api/user/6721d6501c2dcc737fdfa4c2/delete
+
+###
+
+POST http://b1g.ooo/player_api.php?username=7701&password=7701

@@ -13,7 +13,7 @@ const addCard = (num) => {
   let cards = [];
   for (let i = 0; i < num; i++) {
     cards.push(
-      <Link to={`/note/${i}`}>
+      <Link to={`/note/${i}`} key={i}>
         <Card className="m-2">
           <CardHeader>
             <CardTitle>#My Note {i}</CardTitle>
