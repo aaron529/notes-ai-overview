@@ -1,4 +1,4 @@
-import React, { useCallback } from "react";
+import React, { useCallback, useEffect } from "react";
 import PathUtils, { paths } from "@/utils/pathUtils";
 
 function Board() {
@@ -7,6 +7,7 @@ function Board() {
   const handlePointerDown = (e) => {
     setIsDrawing(true);
     startPath(e.clientX, e.clientY);
+    addPath(e.clientX, e.clientY);
   };
 
   const handlePointerMove = (e) => {
@@ -15,14 +16,23 @@ function Board() {
   };
 
   const handlePointerUp = () => {
-    setIsDrawing(false);
-    endPath();
+    if (isDrawing) {
+      setIsDrawing(false);
+      endPath();
+    }
+    console.log("called up");
   };
 
   const handlePointerLeave = () => {
-    setIsDrawing(false);
-    endPath();
+    if (isDrawing) {
+      setIsDrawing(false);
+      endPath();
+    }
   };
+
+  const d = useEffect(() => {
+    console.log(paths.length);
+  }, [isDrawing]);
 
   return (
     <div
@@ -33,7 +43,7 @@ function Board() {
       onPointerLeave={handlePointerLeave}
     >
       <svg className="absolute inset-0 w-full h-full">
-        {paths.length === 0 ? (
+        {isDrawing && (
           <path
             d={path}
             stroke="white"
@@ -42,19 +52,21 @@ function Board() {
             strokeLinejoin="round"
             strokeLinecap="round"
           />
-        ) : (
-          paths.map((p, index) => {
-            return <path
-              key={index}
-              d={p}
-              stroke="white"
-              strokeWidth="3"
-              fill="none"
-              strokeLinejoin="round"
-              strokeLinecap="round"
-            />;
-          })
         )}
+        {paths.length > 0 &&
+          paths.map((p, index) => {
+            return (
+              <path
+                key={index}
+                d={p}
+                stroke="white"
+                strokeWidth="3"
+                fill="none"
+                strokeLinejoin="round"
+                strokeLinecap="round"
+              />
+            );
+          })}
       </svg>
     </div>
   );
