@@ -1,5 +1,4 @@
 # NotesAI
-
 ![GitHub stars](https://img.shields.io/github/stars/aaron529/notes-ai-overview?style=social&)
 ![Technologies](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![Express](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
@@ -9,11 +8,10 @@
 ![pnpm](https://img.shields.io/badge/Package%20Manager-pnpm-F69220?style=for-the-badge&logo=pnpm&logoColor=white)
 ![Passkey](https://img.shields.io/badge/Passkey-WebAuthn-yellow?style=for-the-badge)
 ![AES Encryption](https://img.shields.io/badge/Encryption-AES--256--GCM-red?style=for-the-badge)
-![Last Commit](https://img.shields.io/github/last-commit/aaron529/notes-ai-overview?style=for-the-badge)
 ![Repo Size](https://img.shields.io/github/repo-size/aaron529/notes-ai-overview?style=for-the-badge)
 
 
-
+![Notes Ai Logo](./frontend/public/banner.png)
 
 ---
 
