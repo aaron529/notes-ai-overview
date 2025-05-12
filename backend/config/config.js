@@ -8,7 +8,7 @@ const config = {
     uri: process.env.MONGO_URI,
   },
   jwt: {
-    secret: process.env.JWT_SECRET || "note-ai-super-secret-code556102",
+    secret: process.env.JWT_SECRET || "note-ai-super-secret",
     expiration: process.env.JWT_EXPIRATION || "1h",
   },
 };
