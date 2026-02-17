@@ -30,8 +30,6 @@ This repository is a **public overview** of the NotesAI project. It is intended 
 
 ## 🖼️ Application Screenshots
 
-<strong>📸 Click to View Screenshots</strong>
-
 ### 🔹 Email-based Registration
 ![Email Registration](./screenshots/Picture1.png)
 
