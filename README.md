@@ -30,8 +30,7 @@ This repository is a **public overview** of the NotesAI project. It is intended 
 
 ## 🖼️ Application Screenshots
 
-<details>
-<summary><strong>📸 Click to View Screenshots</strong></summary>
+<strong>📸 Click to View Screenshots</strong>
 
 ### 🔹 Email-based Registration
 ![Email Registration](./screenshots/Picture1.png)
@@ -86,8 +85,6 @@ Capture physical notes using mobile and convert them to digital.
 ![Image to Note 2](./screenshots/Picture19.png)
 ![Image to Note 3](./screenshots/Picture20.png)
 ![Image to Note 4](./screenshots/Picture21.png)
-
-</details>
 
 ---
 
